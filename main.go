@@ -58,7 +58,7 @@ func main() {
 	})
 	for i, kv := range emojiCounter {
 		// 上位だけ表示
-		if i >= 50 {
+		if i >= 100 {
 			break
 		}
 		fmt.Printf("%s: %d\n", kv.Key, kv.Value)
