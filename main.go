@@ -38,8 +38,8 @@ func main() {
 
 		for _, message := range messages {
 			reactions := message.Reactions
-			for _, rereaction := range reactions {
-				emojiMap[rereaction.Name]++
+			for _, reaction := range reactions {
+				emojiMap[reaction.Name]++
 			}
 		}
 	}
