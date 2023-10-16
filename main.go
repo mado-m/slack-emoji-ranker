@@ -26,7 +26,7 @@ func main() {
 
 	// 対象期間の全emojiを取得
 	emojiMap := map[string]int{}
-	oldest := time.Now().AddDate(0, 0, -30).Unix()
+	oldest := time.Now().AddDate(0, 0, -365).Unix()
 	for _, channel := range channels {
 		fmt.Printf("channelId:[%s], channelName:[%s] .\n", channel.ID, channel.Name)
 		messages, err := getAllMessages(api, channel.ID, oldest)
@@ -57,8 +57,8 @@ func main() {
 		return emojiCounter[i].Value > emojiCounter[j].Value
 	})
 	for i, kv := range emojiCounter {
-		// 上位だけ取得
-		if i >= 30 {
+		// 上位だけ表示
+		if i >= 50 {
 			break
 		}
 		fmt.Printf("%s: %d\n", kv.Key, kv.Value)
